@@ -1,0 +1,76 @@
+/* Discs */
+.discs {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+    margin: 1vmin auto 0;
+    width: 80vmin;
+    min-height: 10vmin;
+    align-items: center;
+}
+
+.disc {
+    z-index: 1;
+    border-radius: 1vmin;
+    height: 1.5vmin;
+    pointer-events: none;
+    margin-top: 0.25vmin;
+    margin-bottom: 0.25vmin;
+    // transition: 6 0.3s step-end;
+}
+.six {
+    width: 20vmin;
+    background: linear-gradient(to right, #f2a097, #ff3a24, #e74c3c);
+
+}
+.c {
+    flex-grow: 1;
+}
+
+/* Winning */
+.win {
+    z-index: 7;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10vmin;
+    bottom: -7.5vmin;
+    color: #966f33;
+    font-family: Arial, sans-serif;
+    font-size: 6vmin;
+    line-height: 17.5vmin;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+/* Everything Else */
+body {
+    margin: 0;
+    // background-color: #f8f8f8;
+}
+
+form {
+    text-align: center;
+}
+
+.tower {
+    position: absolute;
+    // top: -11vmin;
+    border-radius: 1vmin;
+    width: 1.5vmin;
+    height: 100%;
+    background: linear-gradient(to right, #d7b889, #b27315, #966f33);
+}
+.b {
+    // left: 42.5vmin;
+}
+
+.bottom {
+    position: relative;
+    display: block;
+    // margin: 0 auto;
+    border-radius: 2vmin;
+    width: 30vmin;
+    height: 1vmin;
+    background: blue;}

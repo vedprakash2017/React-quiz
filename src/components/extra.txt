@@ -1,0 +1,12 @@
+style sheet
+https://edolve.s3.ap-south-1.amazonaws.com/1620026386style.css
+
+
+
+home audio
+// https://edolve.s3.ap-south-1.amazonaws.com/1620131058home.wav
+// https://edolve.s3.ap-south-1.amazonaws.com/1620131998home.ogg
+
+
+{/* <ReactAudioPlayer src={"https://edolve.s3.ap-south-1.amazonaws.com/1620131998home.ogg"} controls ></ReactAudioPlayer> */}
+ 

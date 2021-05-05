@@ -1,0 +1,17 @@
+.player {
+    
+    // background: fade-out(white, .15);
+    display: flex;
+    // flex-wrap: wrap;
+    justify-content: space-around;
+    // border: 2px solid darken($off-white, 10%);
+    border-radius: 10px;
+}
+
+.player__items {
+    display: flex;
+    width:50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
