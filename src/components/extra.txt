@@ -10,3 +10,5 @@ home audio
 
 {/* <ReactAudioPlayer src={"https://edolve.s3.ap-south-1.amazonaws.com/1620131998home.ogg"} controls ></ReactAudioPlayer> */}
  
+ intro audio
+ // https://edolve.s3.ap-south-1.amazonaws.com/1620296923Adventure Trailer.mp3
