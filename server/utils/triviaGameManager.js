@@ -21,7 +21,7 @@ class TriviaGameManager extends GameManager {
                 qs: res,
                 waiting: 0
             }
-
+            // console.log(quiz);
             this.quizzes[roomName] = quiz;
 
 

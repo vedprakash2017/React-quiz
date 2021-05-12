@@ -4,7 +4,7 @@ module.exports = {
 
     getCategories: async () => {
         try {
-            var response = await axios.get("https://opentdb.com/api_category.php");
+            var response = await axios.get("http://localhost:3005/api/v1/quiz/cat");
             return response.data;
         } catch (error) {
             throw new Error("Unable to fetch categories", error);
@@ -15,18 +15,32 @@ module.exports = {
     getQuestions: async (category, difficulty, questions) => {
         var url;
         if(category === "0" && difficulty === "any") {
-            url = `https://opentdb.com/api.php?amount=${questions}&encode=url3986`;
+            url = `http://localhost:3005/api/v1/quiz/get?amount=${questions}`;
         } else if(category === "0") {
-            url = `https://opentdb.com/api.php?amount=${questions}&difficulty=${difficulty}&encode=url3986`;
+            url = `http://localhost:3005/api/v1/quiz/get?amount=${questions}&difficulty=${difficulty}`;
         } else if(difficulty === "any") {
-            url = `https://opentdb.com/api.php?amount=${questions}&category=${category}&encode=url3986`;
+            url = `http://localhost:3005/api/v1/quiz/get?amount=${questions}&category=${category}`;
         } else {
-            url = `https://opentdb.com/api.php?amount=${questions}&category=${category}&difficulty=${difficulty}&encode=url3986`;
+            url = `http://localhost:3005/api/v1/quiz/get?amount=${questions}&category=${category}&difficulty=${difficulty}`;
         };
 
         try {
+            console.log(url);
             var response = await axios.get(url);
-            return response.data.results;
+            console.log("hello bhai ");
+            console.log(response.data);
+            console.log("hmm");
+
+
+            // url = `https://opentdb.com/api.php?amount=${questions}&encode=url3986`;
+
+
+            // var response = await axios.get(url);
+            // console.log("hello bhai ");
+            // console.log(response.data.results.incorrect_answers);
+            // console.log("hmm");
+
+            return response.data;
         } catch (error) {
             throw new Error("Unable to fetch questions", error);
         }
