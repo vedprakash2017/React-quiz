@@ -35,7 +35,11 @@ export class QuestionPage extends React.Component {
 
     render() {
         return (
-            <div className="content-container">
+
+
+            <div class="container-bk">
+                <div className="content-container">
+                
                 {this.props.type === "" && <Redirect to="/" />}
                 <Fade>
                     {
@@ -100,6 +104,45 @@ export class QuestionPage extends React.Component {
                     }
 
                 </Fade>
+
+                </div>
+
+
+                    <cloud class="cloud fade-it"></cloud>
+                    <cloud class="cloud fade-it"></cloud>
+                    <cloud class="cloud fade-it"></cloud>
+                    <cloud class="cloud fade-it"></cloud>
+                    
+                    <airplane class="airplane">
+                        <div class="head"></div>
+                        <div class="body-bk">
+                            <div class="window"></div>
+                            <div class="window"></div>
+                            <div class="window"></div>
+                        </div>
+                        <div class="lwing"></div>
+                        <div class="rwing"></div>
+                        <div class="tale"></div>
+                    </airplane>
+                    
+
+                    <ground class="ground">
+                    <tree class="tree">
+                        <div class="leaves"></div>
+                    </tree>
+                    <tree class="tree">
+                        <div class="leaves"></div>
+                    </tree>
+                    <tree class="tree">
+                        <div class="leaves"></div>
+                    </tree>
+                    <tree class="tree">
+                        <div class="leaves"></div>
+                    </tree>
+                    <tree class="tree">
+                        <div class="leaves"></div>
+                    </tree>
+                    </ground>
 
             </div>
         )
