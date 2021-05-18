@@ -36,6 +36,21 @@ export class JoinGamePage extends React.Component {
     // };
     runParentHandleClick = (id) => {
         this.setState({ colour: id });
+
+
+        const card = document.getElementsByTagName('img');
+        
+        for (let index = 0; index < card.length; index++) {
+             card[index].setAttribute("style","height:100%;width:100%");
+        }
+
+        card[id-1].setAttribute("style","height:80%;width:80%");
+        //   cursor.setAttribute('style','top:'+e.pageY+'px; left:'+ e.pageX+'px;');
+        //     if(this.state.play == false) { this.setState({ play: true });}
+
+        //   var ax = -($(window).innerWidth()/2- e.pageX)/20;
+        //   var ay = ($(window).innerHeight()/2- e.pageY)/10;
+        //   card.setAttribute("style", "");
       }
     submitForm = (e) => {
         e.preventDefault();
