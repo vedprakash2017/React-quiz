@@ -61,6 +61,7 @@ export class DashboardPage extends React.Component {
 
     startAsHost = () => {
         this.props.setHost();
+        // this.props.history.push("/create_quiz");
         this.props.history.push("/create");
     };
 

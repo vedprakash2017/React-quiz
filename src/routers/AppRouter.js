@@ -9,7 +9,8 @@ import LobbyPage from '../components/LobbyPage';
 import JoinGamePage from '../components/JoinGamePage';
 import QuestionPage from '../components/QuestionPage';
 import RenderWithHeader from './RenderWithHeader';
-
+import EnterAmount from '../components/EnterBasic';
+import addQuestion from '../components/addQuestion';
 
 export const history = createHistory();
 
@@ -19,6 +20,8 @@ const AppRouter = () => (
         <div>
             <Switch>
                 <Route exact={true} path="/" component={DashboardPage} />
+                <RenderWithHeader  path="/create_quiz" component={EnterAmount} />
+                <RenderWithHeader  path="/addQuiz" component={addQuestion} />
                 <RenderWithHeader  path="/create" component={CreateGamePage} />
                 <RenderWithHeader path="/join" component={JoinGamePage} />
                 <RenderWithHeader  path="/lobby" component={LobbyPage} />

@@ -39,6 +39,11 @@ export class CreateGamePage extends React.Component {
         const questionCount = e.target.value;
         this.setState({ questionCount });
     }
+    customQuiz = ()=>{
+        // console.log("hemlo");
+        // this.props.setHost();
+        this.props.history.push("/create_quiz");
+    }
     submitForm = (e) => {
         e.preventDefault();
         const config = {
@@ -107,6 +112,10 @@ export class CreateGamePage extends React.Component {
                             {/* <button className="button">Create</button> */}
 
                         </form>
+
+                        <div class="btn" >
+                                            <button class="btn-hover color-9" style={{width:"400px"}} onClick={this.customQuiz}>Create A Customize Quiz</button>
+                        </div>
                     </Fade>
 
                 </div>
