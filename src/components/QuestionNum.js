@@ -7,7 +7,7 @@ const Stars = ({amount}) => {
     <div>
         <h3>Question #{i+1}</h3>
     </div>                
-    <QuestionText Number={i+1}/>
+    <QuestionText number={i+1}/>
     </li>    
 )
   }
