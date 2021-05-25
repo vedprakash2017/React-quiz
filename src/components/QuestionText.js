@@ -47,8 +47,8 @@ export class Ques extends React.Component {
         <div style={{flex:1}}>
         
 
-          <select value={this.state.type} name="type" onChange={this.handleChange}>
-            <option value="multi">Multiple</option>
+          <select value={this.state.type} name={"type-"+this.props.number} onChange={this.handleChange}>
+            <option value="multiple">Multiple</option>
             <option value="bool">True/False</option>
           </select>
         

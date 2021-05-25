@@ -142,11 +142,90 @@ function pagination(){
 		event.preventDefault();
 	
 		const data = new FormData(event.target);
-		for (let index = 0; index < this.state.questionCount; index++) {
+		for (let index = 1; index <= this.state.questionCount; index++) {
+
+
 			const x = {};
-			x.correct = data.get('correct-'+index);
+			x.type = data.get('type-'+index);
+
+			x.question = data.get('question-'+index);
+					if(x.type == 'multiple' )
+					{
+						
+						x.correct_answer = data.get('correct-'+index);
+						const inc = [data.get('incorrect#1-'+index) , data.get('incorrect#2-'+index) , data.get('incorrect#3-'+index) ];
+			
+						if(x.question != "" && inc[0]!= "" && inc[1]!= "" && inc[2]!= "" && x.correct_answer!= "")
+						{
+						x.incorrect_answers = inc;
+						// alert('Question added!');					
+						}
+						else
+						{
+							alert('Please fill all fields in question #'+index);
+							return;
+						}
+					}
+					else if(x.type == 'bool')
+					{
+
+
+						x.correct_answer =  data.get('bool-'+index);
+						// console.log(x);
+						if(x.question != undefined && x.correct_answer != undefined)
+						{
+							
+						x.incorrect_answers = [!data.get('bool-'+index)];
+							// alert('Question added!');	
+						}
+						else
+						{
+							alert('Please fill all fields in question #'+index);
+							return;
+						}
+					}
+			x.difficulty= 'easy';
+			x.category = 'other';
+			x.room = this.state.room;
 			console.log(x);
+			// axios({
+			// 	method: "post",
+			// 	url: "http://localhost:3005/api/v1/quiz/add",
+			// 	data: JSON.stringify(x),
+			// 	headers: { "Content-Type": "application/json" },
+			//   })
+			// 	.then(function (response) {
+			// 	  //handle success
+			// 	  console.log(response);
+			// 	})
+			// 	.catch(function (response) {
+			// 	  //handle error
+			// 	  console.log(response);
+			// 	});
 		}
+
+
+        // const config = {
+        //     room: this.state.room,
+        //     category: 'other',
+        //     difficulty: 'easy',
+        //     questionCount: this.state.questionCount
+        // };
+        // //console.log("submitting")
+        // socket.emit("createRoom", config, (res) => {
+        //     //console.log("res!", res);
+        //     if (res.code === "success") {
+        //         this.setState({ error: "" })
+        //         this.props.setRoom(this.state.room);
+        //         this.props.history.push("/lobby");
+        //     } else {
+        //         this.setState({ error: res.msg })
+        //     }
+        // });
+
+
+
+
 		// // Access FormData fields with `data.get(fieldName)`
 		// // For example, converting to upper case
 		// // data.set('username', data.get('username').toUpperCase());

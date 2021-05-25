@@ -39,8 +39,23 @@ export class EnterBasic extends React.Component {
 
         if(this.state.room!='')
         {
+        // var mn = 0;
+        // axios.get(`https://jsonplaceholder.typicode.com/users`)
+        // .then(res => {
+        //     const num = res.data;
+        //     mn = num.persent;
+        // })
+        // if(mn)
+        {
         const changeNum = 0;
         this.setState({ changeNum });
+        }
+        // else
+        // {
+        // const changeNum1 = 0;
+        // this.setState({ changeNum1 });
+        //     alert("Room Name already exist!")
+        // }
         }
         else
         {
@@ -54,7 +69,7 @@ export class EnterBasic extends React.Component {
     }
     submitForm = (e) => {
 
-        this.props.history.push("/addQuiz");
+        // this.props.history.push("/addQuiz");
         // e.preventDefault();
         // const config = {
         //     room: this.state.room,
@@ -106,7 +121,7 @@ export class EnterBasic extends React.Component {
 
                             
                             <div class="btn">
-                                            <button class="btn-hover color-9" onClick={this.handleReset}>Create</button>
+                                            <button class="btn-hover color-9" onClick={this.handleReset} type="button">Create</button>
                             </div>
 
                         </form>
