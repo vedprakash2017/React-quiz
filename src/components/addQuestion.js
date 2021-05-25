@@ -12,12 +12,14 @@ export class addQuestion extends React.Component {
         super(props);
 
         this.state = {
-            room: "",
-            questionCount: "5",
+            room: this.props.roomno,
+            questionCount: this.props.amount,
             error: "",
             background: "",
-            amount:this.props.amount
+            amount:this.props.amount,
+			changeNum1:1
         }
+		this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount(){
@@ -131,6 +133,29 @@ function pagination(){
 	$('#pagination-wrap ul li:eq('+pos+')').addClass('active');
 }
     }
+
+
+
+	handleSubmit(event) {
+		console.log("hmelo")
+		// // Prevent default behavior
+		event.preventDefault();
+	
+		const data = new FormData(event.target);
+		for (let index = 0; index < this.state.questionCount; index++) {
+			const x = {};
+			x.correct = data.get('correct-'+index);
+			console.log(x);
+		}
+		// // Access FormData fields with `data.get(fieldName)`
+		// // For example, converting to upper case
+		// // data.set('username', data.get('username').toUpperCase());
+		// console.log(data);
+		// // Do your Axios stuff here
+	  }
+
+
+
     render() {
         return (
             <div className="content-container" style={{height:"90vh"}}>
@@ -138,21 +163,22 @@ function pagination(){
 
 
 {
-                    this.props.type === "" && <Redirect to="/" />
+                    this.props.type === "" && this.state.changeNum1 == 1 && <Redirect to="/" />
                 }
 <div id="wrapper">
    
                 
    	  <h1>Enter { this.props.amount } Questions </h1>
-        
+      <form onSubmit={this.handleSubmit}>  
    	  <div id="slider-wrap">
+ 
       	  <ul id="slider">
 
-            <QuestionNum amount = {this.props.amount} />
-                 
+			<div style={{left:"0px",width:"100%"}}>    
+            <QuestionNum props = {this.props.amount} />
+      </div>
         
          </ul>
-          
           <div class="btns" id="next"><i class="fa fa-arrow-right"></i></div>
           <div class="btns" id="previous"><i class="fa fa-arrow-left"></i></div>
           <div id="counter"></div>
@@ -163,7 +189,11 @@ function pagination(){
           </div>
                  
       </div>
-  
+
+	  <div >
+				<button type="submit" onclick="return false"> submit </button>
+			</div>
+	  </form>
    </div>
 
 

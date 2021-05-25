@@ -1,13 +1,17 @@
 import React from 'react'
 import QuestionText from './QuestionText';
-const Stars = ({amount}) => {
+const Stars = ({props}) => {
   let stars = []
-  for (let i = 0; i < amount; ++i) {
+  
+  for (let i = 0; i < props; ++i) {
     stars.push(<li data-color="#1abc9c">
     <div>
+    <div>
         <h3>Question #{i+1}</h3>
-    </div>                
+    </div>
+               
     <QuestionText number={i+1}/>
+    </div>
     </li>    
 )
   }

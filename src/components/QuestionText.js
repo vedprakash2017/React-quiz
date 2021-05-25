@@ -41,11 +41,9 @@ export class Ques extends React.Component {
   }
   render(){
     return(
-      <div style={{left:"0px",width:"100%"}}>
-      <form>
 
       <div style={{marginTop:"100px"}}>
-      <div className="bool-type" style={{display:"flex",justifyContent:"center"}}  >
+      <div className={ 'bool-type-'+this.props.number} style={{display:"flex",justifyContent:"center"}}  >
         <div style={{flex:1}}>
         
 
@@ -58,43 +56,45 @@ export class Ques extends React.Component {
     </div>
 
       <div>
-      <p>Question</p> <input type="text" />
+      <p>Question</p> <input type="text" name={"question-"+this.props.number}/>
       </div>
 
       <div className="bool" style={{display:"flex",}}>
         <div style={{flex:1}}>
-        <p>True</p> <input type="radio" name="bool"/>
+        <p>True</p> <input type="radio" name={"bool-"+this.props.number} value="True"/>
         </div>
 
         <div style={{flex:1}}>
-        <p>False</p> <input type="radio" name="bool" />
+        <p>False</p> <input type="radio" name={"bool-"+this.props.number} value="False"/>
         </div>
       </div>
 
       <div className="multi" style={{display:"flex",justifyContent:"space-around"}}>
-        <div style={{display:"flex", flexDirection:"column"}}>
+        <div style={{display:"flex", flexDirection:"row"}}>
         <div style={{flex:1}}>
-        <p>Correct Answer</p> <input type="text" />        
+        <p>Correct Answer</p> <input type="text" name={"correct-"+this.props.number}/>        
         </div>
 
         <div style={{flex:1}}>
-        <p>Incorrect Answer#1</p> <input type="text" />  
+        <p>Incorrect Answer#1</p> <input type="text" name={"incorrect#1-"+this.props.number}/>  
         </div>
         </div>
 
-        <div style={{display:"flex", flexDirection:"column"}}>
+        <div style={{display:"flex", flexDirection:"row"}}>
         <div style={{flex:1}}>
-        <p>Incorrect Answer#2</p> <input type="text" />  
+        <p>Incorrect Answer#2</p> <input type="text" name={"incorrect#2-"+this.props.number}/>  
         </div>
 
         <div style={{flex:1}}>
-        <p>Incorrect Answer#3</p> <input type="text" />  
+        <p>Incorrect Answer#3</p> <input type="text" name={"incorrect#3-"+this.props.number}/>  
         </div>
         </div>
       
       </div>
+
+      <div>
+        {/* <button> Send </button> */}
       </div>
-      </form>
       </div>
     )
   }

@@ -17,7 +17,13 @@ export class EnterBasic extends React.Component {
             error: "",
             background: "",
             changeNum: 1,
+            changeNUM1:1
         }
+    }
+    sethim=()=>{
+        console.log("hemlo");
+    const multi = document.getElementsByClassName('multi')[0];
+        console.log(multi);
     }
 
     onRoomChange = (e) => {
@@ -31,8 +37,19 @@ export class EnterBasic extends React.Component {
     }
     handleReset = (e) =>{
 
+        if(this.state.room!='')
+        {
         const changeNum = 0;
         this.setState({ changeNum });
+        }
+        else
+        {
+
+        const changeNum1 = 0;
+
+        this.setState({ changeNum1 });
+            alert("Please Enter Room Name!")
+        }
         // this.props.history.push("/addQuiz");
     }
     submitForm = (e) => {
@@ -63,7 +80,7 @@ export class EnterBasic extends React.Component {
         return (
             <div className="content-container" style={{height:"90vh"}}>
                 {
-                    this.props.type === "" && <Redirect to="/" />
+                    this.props.type === "" && this.props.changeNUM1===1 && <Redirect to="/" />
                 }
                 
                 
@@ -97,9 +114,14 @@ export class EnterBasic extends React.Component {
 
                 </div>
             }
-            {this.state.changeNum === 0 && 
+            {this.state.changeNum === 0 && this.state.room != '' &&
+            <div>
             
-            <AddQuestion amount = {this.state.questionCount} />
+            <AddQuestion amount = {this.state.questionCount} roomno = {this.state.room}/>
+            {/* <div onClick={this.sethim}>    
+                <button> submit </button>
+            </div> */}
+           </div>
             }
 
             </div>
