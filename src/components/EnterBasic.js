@@ -5,6 +5,7 @@ import { setRoom } from '../actions/game';
 import { Redirect } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 import AddQuestion from './addQuestion';
+import axios from 'axios'
 
 export class EnterBasic extends React.Component {
 
@@ -39,23 +40,25 @@ export class EnterBasic extends React.Component {
 
         if(this.state.room!='')
         {
-        // var mn = 0;
-        // axios.get(`https://jsonplaceholder.typicode.com/users`)
-        // .then(res => {
-        //     const num = res.data;
-        //     mn = num.persent;
-        // })
-        // if(mn)
+        var mn = 0;
+        axios.get('http://localhost:3005/api/v1/quiz/findRoom?room='+this.state.room)
+        .then(res => {
+            const num = res.data;
+            mn = parseInt(num.persent);
+            if(mn != 1)
         {
         const changeNum = 0;
         this.setState({ changeNum });
         }
-        // else
-        // {
-        // const changeNum1 = 0;
-        // this.setState({ changeNum1 });
-        //     alert("Room Name already exist!")
-        // }
+        else
+        {
+        const changeNum1 = 0;
+        this.setState({ changeNum1 });
+            alert("Room Name already exist!")
+        }
+        }
+        )
+        
         }
         else
         {
