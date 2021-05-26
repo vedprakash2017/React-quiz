@@ -5,7 +5,7 @@ import { setRoom } from '../actions/game';
 import { Redirect } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 import QuestionNum from './QuestionNum';
-
+import axios from 'axios';
 export class addQuestion extends React.Component {
 
     constructor(props) {
@@ -188,20 +188,21 @@ function pagination(){
 			x.category = 'other';
 			x.room = this.state.room;
 			console.log(x);
-			// axios({
-			// 	method: "post",
-			// 	url: "http://localhost:3005/api/v1/quiz/add",
-			// 	data: JSON.stringify(x),
-			// 	headers: { "Content-Type": "application/json" },
-			//   })
-			// 	.then(function (response) {
-			// 	  //handle success
-			// 	  console.log(response);
-			// 	})
-			// 	.catch(function (response) {
-			// 	  //handle error
-			// 	  console.log(response);
-			// 	});
+			
+			axios({
+				method: "post",
+				url: "http://localhost:3005/api/v1/quiz/add",
+				data: JSON.stringify(x),
+				headers: { "Content-Type": "application/json" },
+			  })
+				.then(function (response) {
+				  //handle success
+				//   console.log(response);
+				})
+				.catch(function (response) {
+				  //handle error
+				//   console.log(response);
+				});
 		}
 
 
