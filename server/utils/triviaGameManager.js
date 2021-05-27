@@ -15,7 +15,7 @@ class TriviaGameManager extends GameManager {
         }
         this.games.push(game);
 
-        getQuestions(category, difficulty, questions).then((res) => {
+        getQuestions(category, difficulty, questions,roomName).then((res) => {
 
             var quiz = {
                 qs: res,

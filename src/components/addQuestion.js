@@ -206,23 +206,23 @@ function pagination(){
 		}
 
 
-        // const config = {
-        //     room: this.state.room,
-        //     category: 'other',
-        //     difficulty: 'easy',
-        //     questionCount: this.state.questionCount
-        // };
-        // //console.log("submitting")
-        // socket.emit("createRoom", config, (res) => {
-        //     //console.log("res!", res);
-        //     if (res.code === "success") {
-        //         this.setState({ error: "" })
-        //         this.props.setRoom(this.state.room);
-        //         this.props.history.push("/lobby");
-        //     } else {
-        //         this.setState({ error: res.msg })
-        //     }
-        // });
+        const config = {
+            room: this.state.room,
+            category:"32",
+            difficulty: 'easy',
+            questionCount: this.state.questionCount
+        };
+        //console.log("submitting")
+        socket.emit("createRoom", config, (res) => {
+            //console.log("res!", res);
+            if (res.code === "success") {
+                this.setState({ error: "" })
+                this.props.setRoom(this.state.room);
+                this.props.history.push("/lobby");
+            } else {
+                this.setState({ error: res.msg })
+            }
+        });
 
 
 
