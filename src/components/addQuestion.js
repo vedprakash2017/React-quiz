@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 import QuestionNum from './QuestionNum';
 import axios from 'axios';
-export class addQuestion extends React.Component {
+export class AddQuestion extends React.Component {
 
     constructor(props) {
         super(props);
@@ -14,6 +14,8 @@ export class addQuestion extends React.Component {
         this.state = {
             room: this.props.roomno,
             questionCount: this.props.amount,
+            category: "0",
+            difficulty: "any",
             error: "",
             background: "",
             amount:this.props.amount,
@@ -137,6 +139,7 @@ function pagination(){
 
 
 	handleSubmit(event) {
+		console.log(this.props);		
 		console.log("hmelo")
 		// // Prevent default behavior
 		event.preventDefault();
@@ -218,7 +221,10 @@ function pagination(){
             if (res.code === "success") {
                 this.setState({ error: "" })
                 this.props.setRoom(this.state.room);
-                this.props.history.push("/lobby");
+				// console.log()
+				// dispatch(setRoom(this.state.room));
+				// hashHistory.push('/lobby');
+                this.props.props2.history.push("/lobby");
             } else {
                 this.setState({ error: res.msg })
             }
@@ -282,6 +288,20 @@ function pagination(){
     }
 }
 
-export default addQuestion;
+
+
+const mapStateToProps = (state) => ({
+    categories: state.game.categories,
+    type: state.type
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    setRoom: (room) => dispatch(setRoom(room))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddQuestion);
+
+
+// export default addQuestion;
 
 // export default connect(mapStateToProps, mapDispatchToProps)(CreateGamePage);

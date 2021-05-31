@@ -135,7 +135,7 @@ export class EnterBasic extends React.Component {
             {this.state.changeNum === 0 && this.state.room != '' &&
             <div>
             
-            <AddQuestion amount = {this.state.questionCount} roomno = {this.state.room}/>
+            <AddQuestion amount = {this.state.questionCount} roomno = {this.state.room} props2 = {this.props}/>
             {/* <div onClick={this.sethim}>    
                 <button> submit </button>
             </div> */}
@@ -147,14 +147,15 @@ export class EnterBasic extends React.Component {
     }
 }
 
+export default EnterBasic;
 
-const mapStateToProps = (state) => ({
-    categories: state.game.categories,
-    type: state.type
-});
+// const mapStateToProps = (state) => ({
+//     categories: state.game.categories,
+//     type: state.type
+// });
 
-const mapDispatchToProps = (dispatch) => ({
-    setRoom: (room) => dispatch(setRoom(room))
-});
+// const mapDispatchToProps = (dispatch) => ({
+//     setRoom: (room) => dispatch(setRoom(room))
+// });
 
-export default connect(mapStateToProps, mapDispatchToProps)(EnterBasic);
+// export default connect(mapStateToProps, mapDispatchToProps)(EnterBasic);

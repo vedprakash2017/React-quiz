@@ -30,7 +30,7 @@ module.exports = {
         var url;
         if(category === "0" && difficulty === "any") {
 
-            url = 'http://localhost:3005/api/v1/quiz/get?amount=${questions}&room=${roomName}';
+            url = `http://localhost:3005/api/v1/quiz/get?amount=${questions}&room=${roomName}`;
             // url = `https://opentdb.com/api.php?amount=${questions}&encode=url3986`;
         } else if(category === "0") {
             
