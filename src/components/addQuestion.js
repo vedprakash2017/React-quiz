@@ -203,7 +203,7 @@ function pagination(){
 			
 			axios({
 				method: "post",
-				url: "http://localhost:3005/api/v1/quiz/add",
+				url: process.env.url+"/api/v1/quiz/add",
 				data: JSON.stringify(ans[index]),
 				headers: { "Content-Type": "application/json" },
 			  })

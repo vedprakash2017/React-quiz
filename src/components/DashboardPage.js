@@ -12,7 +12,6 @@ export class DashboardPage extends React.Component {
         }
       
         componentDidMount() {
-          // When the component is mounted, add your DOM listener.
         document.addEventListener("mousemove", this.handleCursor);
         this.state.audio.addEventListener('ended', () => this.setState({ play: true }));
         if(this.state.play == true)

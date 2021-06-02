@@ -41,7 +41,7 @@ export class EnterBasic extends React.Component {
         if(this.state.room!='')
         {
         var mn = 0;
-        axios.get('http://localhost:3005/api/v1/quiz/findRoom?room='+this.state.room)
+        axios.get(process.env.url+'/api/v1/quiz/findRoom?room='+this.state.room)
         .then(res => {
             const num = res.data;
             mn = parseInt(num.persent);

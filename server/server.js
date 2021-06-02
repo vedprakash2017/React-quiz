@@ -2,6 +2,8 @@ const socketio = require("socket.io");
 const express = require("express");
 const http = require("http");
 const path = require("path");
+require('dotenv').config();
+
 
 const { TriviaGameManager } = require("./utils/triviaGameManager");
 const { isValidString } = require("./utils/validate");
