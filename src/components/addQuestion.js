@@ -145,6 +145,7 @@ function pagination(){
 		event.preventDefault();
 	
 		const data = new FormData(event.target);
+		let ans = [];
 		for (let index = 1; index <= this.state.questionCount; index++) {
 
 
@@ -191,20 +192,28 @@ function pagination(){
 			x.category = 'other';
 			x.room = this.state.room;
 			console.log(x);
+			ans.push(x);
+			
+		}
+		console.log("ans " + ans);
+		console.log("ans0" + ans[0]);
+		
+		for (let index = 0; index < ans.length; index++) {
+		
 			
 			axios({
 				method: "post",
 				url: "http://localhost:3005/api/v1/quiz/add",
-				data: JSON.stringify(x),
+				data: JSON.stringify(ans[index]),
 				headers: { "Content-Type": "application/json" },
 			  })
 				.then(function (response) {
 				  //handle success
-				//   console.log(response);
+				  console.log(response);
 				})
 				.catch(function (response) {
 				  //handle error
-				//   console.log(response);
+				  console.log(response);
 				});
 		}
 
@@ -212,23 +221,26 @@ function pagination(){
         const config = {
             room: this.state.room,
             category:"32",
-            difficulty: 'easy',
+            difficulty: "easy",
             questionCount: this.state.questionCount
         };
         //console.log("submitting")
-        socket.emit("createRoom", config, (res) => {
-            //console.log("res!", res);
-            if (res.code === "success") {
-                this.setState({ error: "" })
-                this.props.setRoom(this.state.room);
-				// console.log()
-				// dispatch(setRoom(this.state.room));
-				// hashHistory.push('/lobby');
-                this.props.props2.history.push("/lobby");
-            } else {
-                this.setState({ error: res.msg })
-            }
-        });
+		setTimeout(() => {
+			
+			socket.emit("createRoom", config, (res) => {
+				//console.log("res!", res);
+				if (res.code === "success") {
+					this.setState({ error: "" })
+					this.props.setRoom(this.state.room);
+					// console.log()
+					// dispatch(setRoom(this.state.room));
+					// hashHistory.push('/lobby');
+					this.props.props2.history.push("/lobby");
+				} else {
+					this.setState({ error: res.msg })
+				}
+			});
+		}, 1000);
 
 
 

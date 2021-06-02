@@ -48,7 +48,8 @@ module.exports = {
 
 
         try {
-
+            // url = 'http://localhost:3005/api/v1/quiz/get?amount=5&category=32&difficulty=easy&room=qwe';
+            // console.log(url);
             var response = await axios.get(url);
             console.log(response.data);
             return response.data.results;
