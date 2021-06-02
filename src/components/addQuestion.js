@@ -256,7 +256,7 @@ function pagination(){
 
     render() {
         return (
-            <div className="content-container" style={{height:"90vh"}}>
+            <div className="content-container" style={{}}>
 
 
 

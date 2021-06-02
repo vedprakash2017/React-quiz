@@ -74,7 +74,7 @@ export class JoinGamePage extends React.Component {
 
     render() {
         return (
-            <div className="content-container" style={{height:"90vh"}}>
+            <div className="content-container" style={{}}>
                 {
                     this.props.type === "" && <Redirect to="/" />
                 }
@@ -126,7 +126,7 @@ export class JoinGamePage extends React.Component {
                                 /> */}
                             </div>
                             <div class="btn">
-                                            <button class="btn-hover color-9">Join</button>
+                                            <button class="btn-hover color-9"style={{width:"80%"}}>Join</button>
                             </div>
                             {/* <button className="button">Join</button> */}
 

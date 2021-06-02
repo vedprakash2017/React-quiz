@@ -68,7 +68,7 @@ export class CreateGamePage extends React.Component {
 
     render() {
         return (
-            <div className="content-container" style={{height:"90vh"}}>
+            <div className="content-container" style={{}}>
                 {
                     this.props.type === "" && <Redirect to="/" />
                 }
@@ -107,14 +107,14 @@ export class CreateGamePage extends React.Component {
 
                             
                             <div class="btn">
-                                            <button class="btn-hover color-9" onClick={this.handleReset}>Create</button>
+                                            <button class="btn-hover color-9" style={{width:"80%"}} onClick={this.handleReset}>Create</button>
                             </div>
                             {/* <button className="button">Create</button> */}
 
                         </form>
 
                         <div class="btn" >
-                                            <button class="btn-hover color-9" style={{width:"400px"}} onClick={this.customQuiz}>Create A Customize Quiz</button>
+                                            <button class="btn-hover color-9" style={{width:"80%"}} onClick={this.customQuiz}>Create A Customize Quiz</button>
                         </div>
                     </Fade>
 

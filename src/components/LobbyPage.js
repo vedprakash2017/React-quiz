@@ -29,7 +29,7 @@ export class LobbyPage extends React.Component {
                                 this.props.players.length > 0 && this.props.type === "HOST" && 
                                 <Fade>
                                             <div class="btn">
-                                            <button class="btn-hover color-9" onClick={this.onStartGame}>Start Game </button>
+                                            <button class="btn-hover color-9" style={{width:"80%"}} onClick={this.onStartGame}>Start Game </button>
                                             </div>
                                     {/* <button onClick={this.onStartGame} className="button">Start Game</button> */}
                                 

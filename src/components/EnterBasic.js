@@ -96,7 +96,7 @@ export class EnterBasic extends React.Component {
 
     render() {
         return (
-            <div className="content-container" style={{height:"90vh"}}>
+            <div className="content-container" style={{}}>
                 {
                     this.props.type === "" && this.props.changeNUM1===1 && <Redirect to="/" />
                 }
@@ -124,7 +124,7 @@ export class EnterBasic extends React.Component {
 
                             
                             <div class="btn">
-                                            <button class="btn-hover color-9" onClick={this.handleReset} type="button">Create</button>
+                                            <button class="btn-hover color-9" style={{width:"80%"}}onClick={this.handleReset} type="button">Create</button>
                             </div>
 
                         </form>

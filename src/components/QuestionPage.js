@@ -95,7 +95,7 @@ export class QuestionPage extends React.Component {
 
                                 <div className="list-button">
                                 <div class="btn">
-                                            <button class="btn-hover color-9" onClick={this.handleReset}>Start Again </button>
+                                            <button class="btn-hover color-9" style={{width:"80%"}} onClick={this.handleReset}>Start Again </button>
                                   </div>
                                     {/* <button className="button" onClick={this.handleReset}>Start Again</button> */}
                                 </div>

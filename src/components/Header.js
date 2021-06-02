@@ -46,7 +46,7 @@ export class Header extends React.Component {
     
     render() {
         return (
-            <header className={"header"} style={{height:"8vh",background: "rgba(0, 0, 0, 0.05)"}}>
+            <header className={"header"} style={{background: "rgba(0, 0, 0, 0.05)"}}>
                 <div className={"content-container"}>
                     <div className={"header__content"}>
                         <button className={"header__title button--link button"} onClick={this.handleClick}><h1>OpenTrivia</h1></button>
