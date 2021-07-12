@@ -9,7 +9,6 @@ import { addPlayer, removePlayer, setStroke, setScore, resetStroke, setPlayers }
 import {resetType} from './actions/clientType'
 
 
-
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
